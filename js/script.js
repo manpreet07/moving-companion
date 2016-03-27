@@ -20,7 +20,10 @@ function loadData() {
 	var $apiKey = 'AIzaSyBXZciFZEY5s_qpEeYi7WJ-Y32I2Mw7PEw';
 
 	$body.append('<img class="bgimg" src="https://maps.googleapis.com/maps/api/streetview?size=600x400&location=' + $city + '&key=' + $apiKey + '">');
-
+	
+	$greeting.text("");
+	$greeting.append('So you wan to live at ' + $street + ' ' + $city + '?');
+	
 	var nyTimesUrl = "http://api.nytimes.com/svc/search/v2/articlesearch.json?q=" +
 		$city + "&response-format=jsonp&callback=svc_search_v2_articlesearch&sort=newest&api-key=d781bddc9d95547090d0040cfd9f6bdd:3:74810776"
 

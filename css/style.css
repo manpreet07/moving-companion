@@ -43,3 +43,8 @@ body {background-color: #CCC;}
 .article:first-child {
     border-top:none;
 }
+
+#form-container label { color: white; }
+
+
+
