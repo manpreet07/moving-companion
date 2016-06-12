@@ -19,7 +19,7 @@ function loadData() {
 
 	var $apiKey = 'AIzaSyBXZciFZEY5s_qpEeYi7WJ-Y32I2Mw7PEw';
 
-	if(city){
+	if($city){
 		$body.append('<img class="bgimg" src="https://maps.googleapis.com/maps/api/streetview?size=600x400&location=' + $city + '&key=' + $apiKey + '">');
 	}
 	else{
