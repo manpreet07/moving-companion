@@ -21,9 +21,11 @@ function loadData() {
 
 	if($city){
 		$body.append('<img class="bgimg" src="https://maps.googleapis.com/maps/api/streetview?size=600x400&location=' + $city + '&key=' + $apiKey + '">');
+		var wikiUrl = 'https://en.wikipedia.org/w/api.php?action=opensearch&search='+$city+'&format=json';
 	}
 	else{
 		$body.append('<img class="bgimg" src="https://maps.googleapis.com/maps/api/streetview?size=600x400&location=NewYorkCity,NY&key=AIzaSyBXZciFZEY5s_qpEeYi7WJ-Y32I2Mw7PEw">');
+		var wikiUrl = 'https://en.wikipedia.org/w/api.php?action=opensearch&search=NewYorkCity,NY&format=json';
 	}
 	
 	$greeting.text("");
@@ -46,7 +48,7 @@ function loadData() {
 		});
 
 	
-	var wikiUrl = 'https://en.wikipedia.org/w/api.php?action=opensearch&search='+$city+'&format=json';
+	
 
 	var wikiTimeout = setTimeout(function(){
 		$wikiElem.text("Failed to load wikipedia resources");
