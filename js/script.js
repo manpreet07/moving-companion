@@ -19,7 +19,12 @@ function loadData() {
 
 	var $apiKey = 'AIzaSyBXZciFZEY5s_qpEeYi7WJ-Y32I2Mw7PEw';
 
-	$body.append('<img class="bgimg" src="https://maps.googleapis.com/maps/api/streetview?size=600x400&location=' + $city + '&key=' + $apiKey + '">');
+	if(city){
+		$body.append('<img class="bgimg" src="https://maps.googleapis.com/maps/api/streetview?size=600x400&location=' + $city + '&key=' + $apiKey + '">');
+	}
+	else{
+		$body.append('<img class="bgimg" src="https://maps.googleapis.com/maps/api/streetview?size=600x400&location=Boston,MA&key=AIzaSyBXZciFZEY5s_qpEeYi7WJ-Y32I2Mw7PEw">');
+	}
 	
 	$greeting.text("");
 	$greeting.append('So you want to live at ' + $street + ' ' + $city + '?');
