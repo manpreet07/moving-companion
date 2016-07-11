@@ -1,35 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Your Moving Companion</title>
+    <title>Neighborhood Map</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="http://maps.googleapis.com/maps/api/js"></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script type='text/javascript' src='js/libs/knockout-3.4.0.js'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Josefin+Sans:100,300' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
+    <div class="container">
+      <nav class="row">
+      <div class="container">
+          <h1 class="text-center">Neighborhood Map</h1>
+          </div>
+      </nav>
+        <hr>
+<h2>Where do you want to live?</h2>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="form-group">
 
-    <form id="form-container" class="form-container">
-        <label for="street">Street: </label><input type="text" id="street" value="">
-        <label for="city">City: </label><input type="text" id="city" value="">
-        <button id="submit-btn">Submit</button>
-    </form>
-
-    <hr>
-
-    <h2 id="greeting" class="greeting">Where do you want to live?</h2>
-
-
-    <div class="wikipedia-container">
-        <h3 id="wikipedia-header">Relevant Wikipedia Links</h3>
-        <ul id="wikipedia-links">Type in an address above and find relevant Wikipedia articles here!</ul>
-    </div>
-
-
-    <div class="nytimes-container">
-        <h3 id="nytimes-header">New York Times Articles</h3>
-        <ul id="nytimes-articles" class="article-list">What's going on in your new city? Enter an address and hit submit and the NY Times will tell you here!</div>
-    </div>
-
+                    <form id="form-container" class="form-inline" role="form">
+                        <label for="street"> Street: </label>
+                        <input type="text" id="street" class="form-control">
+                        <label for="city"> City: </label>
+                        <input type="text" id="city" class="form-control">
+                        <button class="btn btn-default" id="submit-btn"> Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <!--<h2 id="greeting" class="greeting">Where do you want to live?</h2>-->
+        <div class="row">
+            <div class="col-sm-12">
+                <div id="googleMap"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-9">
+                <div class="nytimes-container">
+                    <h3 id="nytimes-header">New York Times Articles</h3>
+                    <ul id="nytimes-articles" class="article-list">What's going on in your new city? Enter an address and hit submit and the NY Times will tell you here!
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="wikipedia-container">
+                <h3>Relevant Wikipedia Links</h3>
+                <ul id="wikipedia-links">Type in an address above and find relevant Wikipedia articles here!
+                </ul>
+                </div>
+            </div>
+        </div>
+        <footer class="row">
+            <div class="col-md-12">
+              <div class="footer-container">
+                <h5>Design and Developed by Manpreet Singh</h5>
+            </div>
+              </div>
+        </footer>
+      </div>
     <script src="js/libs/jquery.min.js"></script>
     <script src="js/script.js"></script>
 </body>
+
 </html>
