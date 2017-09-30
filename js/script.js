@@ -10,13 +10,10 @@ function loadData() {
 	$wikiElem.text("");
 	$nytElem.text("");
 
-	// load streetview
-	// YOUR CODE GOES HERE!
-
 	var $street = $('#street').val();
 	var $city = $('#city').val();
 
-	var $apiKey = 'AIzaSyBXZciFZEY5s_qpEeYi7WJ-Y32I2Mw7PEw';
+	var $apiKey = 'AIzaSyBvBaZKwGncTekf1DXUTks76-zNi_b4Sbw';
 
 	if ($city) {
 		$body
@@ -26,8 +23,9 @@ function loadData() {
 				+ $city + '&format=json';
 	} else {
 		$body
-				.append('<img class="bgimg" src="https://maps.googleapis.com/maps/api/streetview?size=600x400&location=Boston, MA&key=AIzaSyBXZciFZEY5s_qpEeYi7WJ-Y32I2Mw7PEw">');
-		var wikiUrl = 'https://en.wikipedia.org/w/api.php?action=opensearch&search=Boston, MA&format=json';
+				.append('<img class="bgimg" src="https://maps.googleapis.com/maps/api/streetview?size=600x400&location=Boston,MA&key='
+				+ $apiKey + '">');
+		var wikiUrl = 'https://en.wikipedia.org/w/api.php?action=opensearch&search=Boston,MA&format=json';
 	}
 
     $greeting.text("");
@@ -41,12 +39,12 @@ function loadData() {
 	if ($city) {
 		var nyTimesUrl = "http://api.nytimes.com/svc/search/v2/articlesearch.json?q="
 				+ $city
-				+ "&response-format=jsonp&callback=svc_search_v2_articlesearch&sort=newest&api-key=d781bddc9d95547090d0040cfd9f6bdd:3:74810776"
+				+ "&response-format=jsonp&callback=svc_search_v2_articlesearch&sort=newest&api-key=6e51c4aec16644669714bb5788675770"
 	} else {
 		var $city = "Boston"
 		var nyTimesUrl = "http://api.nytimes.com/svc/search/v2/articlesearch.json?q="
 				+ $city
-				+ "&response-format=jsonp&callback=svc_search_v2_articlesearch&sort=newest&api-key=d781bddc9d95547090d0040cfd9f6bdd:3:74810776"
+				+ "&response-format=jsonp&callback=svc_search_v2_articlesearch&sort=newest&api-key=6e51c4aec16644669714bb5788675770"
 	}
 	$.getJSON(
 			nyTimesUrl,
